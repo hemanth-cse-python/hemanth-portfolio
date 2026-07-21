@@ -64,6 +64,7 @@ export function Contact() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [result, setResult] = useState("");
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
@@ -84,17 +85,48 @@ export function Contact() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     if (!validate()) return;
 
-    const body = encodeURIComponent(
-      `Hi Sripathi,\n\nMy name is ${formData.name}.\n\n${formData.message}\n\nBest regards,\n${formData.name}\n${formData.email}`
-    );
-    const subject = encodeURIComponent(formData.subject);
-    window.location.href = `mailto:hemanthbunny023@gmail.com?subject=${subject}&body=${body}`;
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 4000);
+    setResult("Sending...");
+
+    const formDataToSend = new FormData();
+
+    formDataToSend.append("access_key", "e4d49ecd-db81-413a-af05-48887c07d6f9");
+
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("subject", formData.subject);
+    formDataToSend.append("message", formData.message);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formDataToSend,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+
+      setResult("Message Sent Successfully!");
+      setIsSubmitted(true);
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setResult("");
+      }, 4000);
+    } else {
+      alert("Faild to send message.");
+    }
   };
 
   const handleChange = (
@@ -247,6 +279,11 @@ export function Contact() {
                     </>
                   )}
                 </Button>
+                {result && (
+                  <p className="mt-4 text-center text-sm font-medium text-green-500">
+                    {result}
+                  </p>
+                )}
               </div>
             </form>
           </div>

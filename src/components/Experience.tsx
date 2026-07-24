@@ -10,7 +10,8 @@ const experiences = [
     id: "edunoverse",
     company: "Edunoverse Tech Solutions",
     role: "Python Internship",
-    description: "Worked on data preprocessing, feature engineering, model training and evaluation using Python.",
+    description:
+      "Worked on data preprocessing, feature engineering, model training and evaluation using Python.",
     duration: "Aug 2025 - Oct 2025",
     location: "Remote",
     type: "Internship",
@@ -38,7 +39,7 @@ function TimelineCard({
   experience,
   index,
 }: {
-  experience: typeof experiences[0];
+  experience: (typeof experiences)[0];
   index: number;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -135,14 +136,18 @@ function TimelineCard({
       {/* Timeline center */}
       <div className="relative order-1 flex flex-col items-center justify-center md:order-2">
         <div className="relative z-10 grid h-16 w-16 place-items-center rounded-full glass-strong shadow-lg shadow-primary/20 ring-1 ring-white/10 transition-all duration-500 group-hover:scale-110">
-          <div className={`h-10 w-10 rounded-full bg-gradient-to-br ${experience.color} p-2.5 text-white`}>
+          <div
+            className={`h-10 w-10 rounded-full bg-gradient-to-br ${experience.color} p-2.5 text-white`}
+          >
             <FloatingIcon size={20} strokeWidth={1.8} />
           </div>
         </div>
       </div>
 
       {/* Empty opposite side */}
-      <div className={`hidden md:block ${index % 2 === 0 ? "md:order-3 md:pl-8" : "md:order-1 md:pr-8"}`} />
+      <div
+        className={`hidden md:block ${index % 2 === 0 ? "md:order-3 md:pl-8" : "md:order-1 md:pr-8"}`}
+      />
     </motion.div>
   );
 }

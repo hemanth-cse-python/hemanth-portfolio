@@ -18,9 +18,15 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 const About = lazy(() => import("@/components/About").then((m) => ({ default: m.About })));
 const Skills = lazy(() => import("@/components/Skills").then((m) => ({ default: m.Skills })));
 const Projects = lazy(() => import("@/components/Projects").then((m) => ({ default: m.Projects })));
-const Experience = lazy(() => import("@/components/Experience").then((m) => ({ default: m.Experience })));
-const Publication = lazy(() => import("@/components/Publication").then((m) => ({ default: m.Publication })));
-const Certificates = lazy(() => import("@/components/Certificates").then((m) => ({ default: m.Certificates })));
+const Experience = lazy(() =>
+  import("@/components/Experience").then((m) => ({ default: m.Experience })),
+);
+const Publication = lazy(() =>
+  import("@/components/Publication").then((m) => ({ default: m.Publication })),
+);
+const Certificates = lazy(() =>
+  import("@/components/Certificates").then((m) => ({ default: m.Certificates })),
+);
 const Resume = lazy(() => import("@/components/Resume").then((m) => ({ default: m.Resume })));
 const Contact = lazy(() => import("@/components/Contact").then((m) => ({ default: m.Contact })));
 
@@ -74,13 +80,29 @@ function Portfolio() {
             © {new Date().getFullYear()} Sripathi Hemanth. Crafted with care.
           </div>
           <nav aria-label="Social links" className="flex items-center gap-3">
-            <a href="https://github.com/hemanth-cse-python" target="_blank" rel="noreferrer noopener" className="grid h-10 w-10 place-items-center rounded-xl glass hover:bg-white/10" aria-label="GitHub profile">
+            <a
+              href="https://github.com/hemanth-cse-python"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="grid h-10 w-10 place-items-center rounded-xl glass hover:bg-white/10"
+              aria-label="GitHub profile"
+            >
               <Github size={16} aria-hidden="true" />
             </a>
-            <a href="https://www.linkedin.com/in/hemanth-sripathi-9850a02bb" target="_blank" rel="noreferrer noopener" className="grid h-10 w-10 place-items-center rounded-xl glass hover:bg-white/10" aria-label="LinkedIn profile">
+            <a
+              href="https://www.linkedin.com/in/hemanth-sripathi-9850a02bb"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="grid h-10 w-10 place-items-center rounded-xl glass hover:bg-white/10"
+              aria-label="LinkedIn profile"
+            >
               <Linkedin size={16} aria-hidden="true" />
             </a>
-            <a href="mailto:hemanthbunny023@gmail.com" className="grid h-10 w-10 place-items-center rounded-xl glass hover:bg-white/10" aria-label="Send email">
+            <a
+              href="mailto:hemanthbunny023@gmail.com"
+              className="grid h-10 w-10 place-items-center rounded-xl glass hover:bg-white/10"
+              aria-label="Send email"
+            >
               <Mail size={16} aria-hidden="true" />
             </a>
           </nav>

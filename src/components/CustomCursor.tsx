@@ -26,7 +26,7 @@ export function CustomCursor() {
       y.set(e.clientY);
       const target = e.target as HTMLElement | null;
       const interactive = !!target?.closest(
-        "a, button, input, textarea, [role='button'], [data-cursor='hover']"
+        "a, button, input, textarea, [role='button'], [data-cursor='hover']",
       );
       setHovering(interactive);
     };

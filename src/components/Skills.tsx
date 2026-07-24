@@ -60,9 +60,7 @@ const skillGroups: SkillGroup[] = [
   },
   {
     category: "Databases",
-    items: [
-      { name: "MySQL", level: 84, icon: Server },
-    ],
+    items: [{ name: "MySQL", level: 84, icon: Server }],
   },
   {
     category: "Tools",

@@ -2,18 +2,26 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Download, ArrowRight, Github, Linkedin, Mail,
-  Code2, Braces, Database, Terminal, GitBranch, Cpu, FileCode2, Binary, Sparkles, Bug,
+  Download,
+  ArrowRight,
+  Github,
+  Linkedin,
+  Mail,
+  Code2,
+  Braces,
+  Database,
+  Terminal,
+  GitBranch,
+  Cpu,
+  FileCode2,
+  Binary,
+  Sparkles,
+  Bug,
 } from "lucide-react";
 import resumeAsset from "@/assets/resume.pdf.asset.json";
 import profileImg from "@/assets/profile.png";
 
-const roles = [
-  "Python Developer",
-  "Web Developer",
-  "SQL Developer",
-  "Machine Learning Enthusiast",
-];
+const roles = ["Python Developer", "Web Developer", "SQL Developer", "Machine Learning Enthusiast"];
 
 function useTypewriter(words: string[], typeSpeed = 90, deleteSpeed = 45, hold = 1400) {
   const [text, setText] = useState("");
@@ -62,10 +70,7 @@ export function Hero() {
   const typed = useTypewriter(roles);
 
   return (
-    <section
-      id="home"
-      className="relative z-10 flex min-h-[100svh] items-center px-4 pt-28 pb-16"
-    >
+    <section id="home" className="relative z-10 flex min-h-[100svh] items-center px-4 pt-28 pb-16">
       {/* Floating coding icons */}
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
         {floatingIcons.map(({ Icon, x, y, size, delay }, i) => (
@@ -182,7 +187,11 @@ export function Hero() {
           >
             {[
               { href: "https://github.com/hemanth-cse-python", Icon: Github, label: "GitHub" },
-              { href: "https://www.linkedin.com/in/hemanth-sripathi-9850a02bb", Icon: Linkedin, label: "LinkedIn" },
+              {
+                href: "https://www.linkedin.com/in/hemanth-sripathi-9850a02bb",
+                Icon: Linkedin,
+                label: "LinkedIn",
+              },
               { href: "mailto:hemanthbunny023@gmail.com", Icon: Mail, label: "Email" },
             ].map(({ href, Icon, label }) => (
               <a
@@ -193,7 +202,10 @@ export function Hero() {
                 aria-label={label}
                 className="group grid h-11 w-11 place-items-center rounded-xl glass transition-all hover:-translate-y-0.5 hover:bg-white/10"
               >
-                <Icon size={18} className="text-muted-foreground transition-colors group-hover:text-foreground" />
+                <Icon
+                  size={18}
+                  className="text-muted-foreground transition-colors group-hover:text-foreground"
+                />
               </a>
             ))}
           </motion.div>
@@ -242,7 +254,9 @@ export function Hero() {
               <Braces size={14} />
             </div>
             <div>
-              <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Stack</div>
+              <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
+                Stack
+              </div>
               <div className="text-xs font-semibold">Python • SQL</div>
             </div>
           </motion.div>
@@ -258,7 +272,9 @@ export function Hero() {
               <Sparkles size={14} />
             </div>
             <div>
-              <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Focus</div>
+              <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
+                Focus
+              </div>
               <div className="text-xs font-semibold">Full Stack + ML</div>
             </div>
           </motion.div>

@@ -39,7 +39,7 @@ const projects = [
 
 const featureIcons = [Brain, Route, BarChart3, Cpu];
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+function ProjectCard({ project, index }: { project: (typeof projects)[0]; index: number }) {
   const Icon = project.icon;
 
   return (

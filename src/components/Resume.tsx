@@ -13,11 +13,7 @@ export function Resume() {
   const [previewOpen, setPreviewOpen] = useState(false);
   const handleDownload = async (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    await downloadAsset({url: resume, 
-      original_filename: "resume.pdf",},
-      "resume.pdf",
-      "Resume"
-    );
+    await downloadAsset({ url: resume, original_filename: "resume.pdf" }, "resume.pdf", "Resume");
   };
 
   return (
@@ -65,8 +61,7 @@ export function Resume() {
               transition={{ duration: 0.5, delay: 0.25 }}
               className="mt-4 text-3xl font-bold leading-tight md:text-4xl"
             >
-              Interested in{" "}
-              <span className="text-gradient">working together?</span>
+              Interested in <span className="text-gradient">working together?</span>
             </motion.h3>
 
             <motion.p
@@ -76,8 +71,8 @@ export function Resume() {
               transition={{ duration: 0.5, delay: 0.35 }}
               className="mt-4 max-w-md text-sm text-muted-foreground md:text-base"
             >
-              Download my latest resume for a complete snapshot of my education,
-              technical skills, projects, and internships.
+              Download my latest resume for a complete snapshot of my education, technical skills,
+              projects, and internships.
             </motion.p>
 
             <motion.div
@@ -175,9 +170,7 @@ export function Resume() {
         url={resume}
         title="Sripathi Hemanth — Resume"
         subtitle="Full Stack Python Developer"
-        asset={{url: resume,
-                original_filename: "resume.pdf",
-        }}
+        asset={{ url: resume, original_filename: "resume.pdf" }}
         downloadName="resume.pdf"
         label="Résumé Preview"
         icon={<FileText size={14} className="text-primary" />}

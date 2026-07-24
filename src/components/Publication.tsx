@@ -84,8 +84,8 @@ export function Publication() {
               className="mt-5 space-y-2"
             >
               <p className="text-sm text-muted-foreground">
-                <span className="font-medium text-foreground/80">Published in:</span>{" "}
-                International Journal of Emerging Research in Science Engineering and Management
+                <span className="font-medium text-foreground/80">Published in:</span> International
+                Journal of Emerging Research in Science Engineering and Management
               </p>
               <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-1.5 rounded-lg bg-white/5 px-3 py-1.5 border border-white/5">
@@ -126,11 +126,13 @@ export function Publication() {
               </a>
               <button
                 type="button"
-                onClick={() => downloadAsset({url:publication,
-                                              original_filename: "publication.pdf",
-                 },
-                  "publication.pdf",
-                  "publication")}
+                onClick={() =>
+                  downloadAsset(
+                    { url: publication, original_filename: "publication.pdf" },
+                    "publication.pdf",
+                    "publication",
+                  )
+                }
                 className="inline-flex items-center gap-2 rounded-xl glass px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-white/10"
               >
                 <Download size={16} />
@@ -158,7 +160,7 @@ export function Publication() {
         url={publication}
         title="Deep Learning-Based Route Optimization"
         subtitle="International Journal of Emerging Research in Science Engineering and Management · Volume 2 Issue 3 · March 2026"
-        asset={{url:publication,original_filename:"publication.pdf",}}
+        asset={{ url: publication, original_filename: "publication.pdf" }}
         downloadName="publication.pdf"
         label="Publication Preview"
         icon={<BookOpen size={14} className="text-primary" />}

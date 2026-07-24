@@ -21,7 +21,10 @@ export function Section({
   className?: string;
 }) {
   return (
-    <section id={id} className={`relative z-10 mx-auto w-full max-w-6xl px-4 py-24 sm:py-28 ${className}`}>
+    <section
+      id={id}
+      className={`relative z-10 mx-auto w-full max-w-6xl px-4 py-24 sm:py-28 ${className}`}
+    >
       {(eyebrow || title) && (
         <motion.div
           variants={variants}

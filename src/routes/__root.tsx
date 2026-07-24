@@ -50,7 +50,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         <p className="mt-2 text-sm text-muted-foreground">Try refreshing the page.</p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
-            onClick={() => { router.invalidate(); reset(); }}
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
             className="rounded-md bg-gradient-brand px-4 py-2 text-sm font-medium text-white"
           >
             Try again
@@ -68,17 +71,32 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "theme-color", content: "#0b0b18" },
       { title: "Sripathi Hemanth — Python Full Stack Developer Portfolio" },
-      { name: "description", content: "Sripathi Hemanth — Python Full Stack Developer building modern web apps with Python, Flask, SQL, JavaScript and machine learning. Explore projects, publications and experience." },
+      {
+        name: "description",
+        content:
+          "Sripathi Hemanth — Python Full Stack Developer building modern web apps with Python, Flask, SQL, JavaScript and machine learning. Explore projects, publications and experience.",
+      },
       { name: "author", content: "Sripathi Hemanth" },
-      { name: "keywords", content: "Sripathi Hemanth, Python Developer, Full Stack Developer, Flask, SQL, Machine Learning, Portfolio, Web Developer" },
+      {
+        name: "keywords",
+        content:
+          "Sripathi Hemanth, Python Developer, Full Stack Developer, Flask, SQL, Machine Learning, Portfolio, Web Developer",
+      },
       { property: "og:title", content: "Sripathi Hemanth — Python Full Stack Developer" },
-      { property: "og:description", content: "Portfolio showcasing Python, full-stack web development, SQL and machine learning projects." },
+      {
+        property: "og:description",
+        content:
+          "Portfolio showcasing Python, full-stack web development, SQL and machine learning projects.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Sripathi Hemanth Portfolio" },
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Sripathi Hemanth — Python Full Stack Developer" },
-      { name: "twitter:description", content: "Portfolio showcasing Python, full-stack web development, SQL and ML projects." },
+      {
+        name: "twitter:description",
+        content: "Portfolio showcasing Python, full-stack web development, SQL and ML projects.",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -86,7 +104,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "canonical", href: "/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap",
+      },
     ],
     scripts: [
       {
@@ -102,7 +123,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "https://www.linkedin.com/in/hemanth-sripathi-9850a02bb",
           ],
           email: "mailto:hemanthbunny023@gmail.com",
-          knowsAbout: ["Python", "Flask", "SQL", "JavaScript", "Machine Learning", "Full Stack Development"],
+          knowsAbout: [
+            "Python",
+            "Flask",
+            "SQL",
+            "JavaScript",
+            "Machine Learning",
+            "Full Stack Development",
+          ],
         }),
       },
     ],
@@ -112,8 +140,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
-
 
 function RootShell({ children }: { children: ReactNode }) {
   return (

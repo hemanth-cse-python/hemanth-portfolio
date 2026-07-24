@@ -25,8 +25,7 @@ export function MouseFollowGlow() {
       style={{
         x: sx,
         y: sy,
-        background:
-          "radial-gradient(circle, oklch(0.6 0.22 280 / 0.15) 0%, transparent 60%)",
+        background: "radial-gradient(circle, oklch(0.6 0.22 280 / 0.15) 0%, transparent 60%)",
         filter: "blur(40px)",
       }}
     />

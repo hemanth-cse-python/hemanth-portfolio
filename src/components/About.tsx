@@ -51,7 +51,7 @@ function AnimatedStat({
   useEffect(() => {
     if (!inView) return;
 
-    let start = 0;
+    const start = 0;
     const duration = 1600;
     const startTime = performance.now();
 
@@ -106,15 +106,25 @@ export function About() {
           className="glass-strong rounded-3xl p-8"
         >
           <p className="text-base leading-relaxed text-muted-foreground">
-            I am a <span className="text-foreground font-medium">Computer Science Engineering graduate</span> passionate about{" "}
-            <span className="text-foreground">Python Development, Full Stack Development, SQL, JavaScript and Machine Learning</span>.
+            I am a{" "}
+            <span className="text-foreground font-medium">
+              Computer Science Engineering graduate
+            </span>{" "}
+            passionate about{" "}
+            <span className="text-foreground">
+              Python Development, Full Stack Development, SQL, JavaScript and Machine Learning
+            </span>
+            .
           </p>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            I enjoy solving real-world problems through software development and continuously improve my technical skills by building
-            projects and learning new technologies.
+            I enjoy solving real-world problems through software development and continuously
+            improve my technical skills by building projects and learning new technologies.
           </p>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            I am currently seeking <span className="text-foreground font-medium">entry-level Software Developer and Python Developer</span>{" "}
+            I am currently seeking{" "}
+            <span className="text-foreground font-medium">
+              entry-level Software Developer and Python Developer
+            </span>{" "}
             opportunities where I can contribute while growing professionally.
           </p>
 
@@ -154,10 +164,12 @@ export function About() {
             transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="glass-strong rounded-3xl p-6"
           >
-            <div className="text-xs uppercase tracking-widest text-muted-foreground">Career Goal</div>
+            <div className="text-xs uppercase tracking-widest text-muted-foreground">
+              Career Goal
+            </div>
             <p className="mt-2 text-sm text-foreground/90">
-              Seeking entry-level Software Developer and Python Developer roles to contribute to impactful projects while growing
-              professionally.
+              Seeking entry-level Software Developer and Python Developer roles to contribute to
+              impactful projects while growing professionally.
             </p>
           </motion.div>
         </div>
@@ -179,7 +191,9 @@ export function About() {
               <div className="text-3xl font-bold text-gradient">
                 <AnimatedStat value={s.value} suffix={s.suffix} inView={inView} />
               </div>
-              <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{s.label}</div>
+              <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
+                {s.label}
+              </div>
             </div>
           </motion.div>
         ))}
@@ -202,7 +216,9 @@ export function About() {
               <div className="text-sm font-semibold">{e.title}</div>
               <div className="mt-1 text-xs text-muted-foreground">{e.place}</div>
               <div className="mt-3 flex items-center justify-between text-xs">
-                <span className="rounded-full bg-white/5 px-2 py-1 text-muted-foreground">{e.period}</span>
+                <span className="rounded-full bg-white/5 px-2 py-1 text-muted-foreground">
+                  {e.period}
+                </span>
                 <span className="text-gradient font-semibold">{e.score}</span>
               </div>
             </div>

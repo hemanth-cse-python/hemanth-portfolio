@@ -135,7 +135,13 @@ export function Certificates() {
                 </button>
                 <button
                   type="button"
-                  onClick={() => downloadAsset({ url: cert.fileUrl, original_filename: `${cert.name}.pdf` }, `${cert.name}.pdf`, cert.name)}
+                  onClick={() =>
+                    downloadAsset(
+                      { url: cert.fileUrl, original_filename: `${cert.name}.pdf` },
+                      `${cert.name}.pdf`,
+                      cert.name,
+                    )
+                  }
                   className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl glass px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-white/10"
                 >
                   <Download size={15} /> Download

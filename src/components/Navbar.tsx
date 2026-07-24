@@ -57,8 +57,14 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-4">
-        <div className={`glass-strong flex items-center justify-between rounded-2xl px-5 py-3 ${scrolled ? "shadow-xl" : ""}`}>
-          <a href="#home" className="font-display text-lg font-bold text-gradient" aria-label="Home">
+        <div
+          className={`glass-strong flex items-center justify-between rounded-2xl px-5 py-3 ${scrolled ? "shadow-xl" : ""}`}
+        >
+          <a
+            href="#home"
+            className="font-display text-lg font-bold text-gradient"
+            aria-label="Home"
+          >
             &lt;Hemanth /&gt;
           </a>
 

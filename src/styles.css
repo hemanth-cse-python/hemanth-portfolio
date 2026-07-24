@@ -80,12 +80,23 @@
 }
 
 @keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 @utility animated-gradient-text {
-  background: linear-gradient(120deg, oklch(0.78 0.16 250), oklch(0.72 0.22 300), oklch(0.68 0.2 220), oklch(0.72 0.22 300));
+  background: linear-gradient(
+    120deg,
+    oklch(0.78 0.16 250),
+    oklch(0.72 0.22 300),
+    oklch(0.68 0.2 220),
+    oklch(0.72 0.22 300)
+  );
   background-size: 300% 300%;
   animation: gradient-shift 8s ease infinite;
   -webkit-background-clip: text;
@@ -95,15 +106,21 @@
 
 @utility btn-glow {
   position: relative;
-  box-shadow: 0 0 20px -5px oklch(0.6 0.22 280 / 0.5), 0 0 40px -10px oklch(0.6 0.22 280 / 0.3);
+  box-shadow:
+    0 0 20px -5px oklch(0.6 0.22 280 / 0.5),
+    0 0 40px -10px oklch(0.6 0.22 280 / 0.3);
   transition: box-shadow 0.3s ease;
 }
 @utility btn-glow-hover {
-  box-shadow: 0 0 30px -3px oklch(0.6 0.22 280 / 0.7), 0 0 60px -10px oklch(0.6 0.22 280 / 0.5);
+  box-shadow:
+    0 0 30px -3px oklch(0.6 0.22 280 / 0.7),
+    0 0 60px -10px oklch(0.6 0.22 280 / 0.5);
 }
 
 @media (hover: none) {
-  .custom-cursor { display: none !important; }
+  .custom-cursor {
+    display: none !important;
+  }
 }
 
 @layer base {
@@ -127,7 +144,10 @@
     background-attachment: fixed;
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
@@ -163,7 +183,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

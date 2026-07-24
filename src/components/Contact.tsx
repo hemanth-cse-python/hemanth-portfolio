@@ -109,7 +109,6 @@ export function Contact() {
     const data = await response.json();
 
     if (data.success) {
-
       setResult("Message Sent Successfully!");
       setIsSubmitted(true);
 
@@ -129,9 +128,7 @@ export function Contact() {
     }
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) {
@@ -260,9 +257,7 @@ export function Contact() {
               </div>
 
               <div className="flex items-center justify-between pt-2">
-                <p className="text-xs text-muted-foreground">
-                  All fields are required.
-                </p>
+                <p className="text-xs text-muted-foreground">All fields are required.</p>
                 <Button
                   type="submit"
                   className="h-11 gap-2 rounded-xl bg-gradient-brand px-6 text-sm font-medium text-white ring-glow transition-transform hover:scale-105 hover:opacity-95"
@@ -280,9 +275,7 @@ export function Contact() {
                   )}
                 </Button>
                 {result && (
-                  <p className="mt-4 text-center text-sm font-medium text-green-500">
-                    {result}
-                  </p>
+                  <p className="mt-4 text-center text-sm font-medium text-green-500">{result}</p>
                 )}
               </div>
             </form>
@@ -323,9 +316,7 @@ export function Contact() {
                   <div className="text-xs uppercase tracking-widest text-muted-foreground">
                     {item.label}
                   </div>
-                  <div className="mt-0.5 truncate text-sm font-medium">
-                    {item.value}
-                  </div>
+                  <div className="mt-0.5 truncate text-sm font-medium">{item.value}</div>
                 </div>
                 <ArrowUpRight
                   size={14}

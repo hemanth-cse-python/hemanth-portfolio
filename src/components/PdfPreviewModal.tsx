@@ -68,7 +68,6 @@ export function PdfPreviewModal({
     return () => clearTimeout(t);
   }, [open, url]);
 
-
   const handleDownload = () => {
     downloadAsset(asset ?? { url, original_filename: downloadName }, downloadName, title);
   };
@@ -111,12 +110,13 @@ export function PdfPreviewModal({
                   {icon || <FileText size={14} className="text-primary" />}
                   <span>{label}</span>
                 </div>
-                <h3 id="pdf-preview-title" className="mt-1 truncate text-lg font-semibold sm:text-xl">
+                <h3
+                  id="pdf-preview-title"
+                  className="mt-1 truncate text-lg font-semibold sm:text-xl"
+                >
                   {title}
                 </h3>
-                {subtitle && (
-                  <p className="truncate text-sm text-muted-foreground">{subtitle}</p>
-                )}
+                {subtitle && <p className="truncate text-sm text-muted-foreground">{subtitle}</p>}
               </div>
               <button
                 ref={closeRef}
@@ -154,7 +154,8 @@ export function PdfPreviewModal({
                     <div>
                       <p className="font-medium">Couldn&apos;t load the preview</p>
                       <p className="mt-1 max-w-sm text-sm text-muted-foreground">
-                        The PDF may be unavailable or your browser may block inline previews. Try opening it in a new tab.
+                        The PDF may be unavailable or your browser may block inline previews. Try
+                        opening it in a new tab.
                       </p>
                     </div>
                     <div className="flex flex-wrap justify-center gap-2">
@@ -187,13 +188,16 @@ export function PdfPreviewModal({
                 onLoad={() => setLoading(false)}
                 onError={handleError}
               />
-
             </div>
 
             {/* Footer */}
             <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/5 px-5 py-4 sm:px-6">
               <p className="text-xs text-muted-foreground">
-                Press <kbd className="rounded bg-white/10 px-1.5 py-0.5 font-mono text-foreground">Esc</kbd> to close
+                Press{" "}
+                <kbd className="rounded bg-white/10 px-1.5 py-0.5 font-mono text-foreground">
+                  Esc
+                </kbd>{" "}
+                to close
               </p>
               <div className="flex flex-wrap gap-2">
                 <a

@@ -133,7 +133,13 @@ export function Resume() {
                 aria-label="Resume preview"
               >
                 <div className="grid aspect-[1/1.294] w-full place-items-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-500">
-                  <FileText size={48} />
+                   <div className="text-center">
+                      <FileText size={48} className="mx-auto mb-4"/>
+                      <p className="text-sm font-medium">Resume PDF</p>
+                      <p className="mt-1 text-xs text-slate-500">
+                        Click to view resume
+                      </p> 
+                   </div>
                 </div>
               </object>
 

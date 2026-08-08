@@ -18,9 +18,12 @@ export function ParticlesBackground() {
     let raf = 0;
 
     const isSmall = width < 768;
-    const count = isSmall
-      ? Math.min(35, Math.floor((width * height) / 40000))
-      : Math.min(90, Math.floor((width * height) / 22000));
+    if (isSmall){
+      return;
+    }
+    const count = Math.min(45,Math.floor((width*height)/30000));
+      // ? Math.min(35, Math.floor((width * height) / 40000))
+      // : Math.min(90, Math.floor((width * height) / 22000));
 
     const particles = Array.from({ length: count }, () => ({
       x: Math.random() * width,

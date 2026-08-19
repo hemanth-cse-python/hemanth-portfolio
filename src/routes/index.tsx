@@ -6,11 +6,11 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import { ParticlesBackground } from "@/components/ParticlesBackground";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-// import { PageLoader } from "@/components/PageLoader";
+import { PageLoader } from "@/components/PageLoader";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { BackToTop } from "@/components/BackToTop";
 import { CustomCursor } from "@/components/CustomCursor";
-// import { MouseFollowGlow } from "@/components/MouseFollowGlow";
+import { MouseFollowGlow } from "@/components/MouseFollowGlow";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 // Lazy-load below-the-fold sections to shrink the initial JS bundle
@@ -45,10 +45,10 @@ function Portfolio() {
         Skip to content
       </a>
 
-      {/* <PageLoader /> */}
+      <PageLoader />
       <ScrollProgress />
       <CustomCursor />
-      {/* <MouseFollowGlow /> */}
+      <MouseFollowGlow />
       <ParticlesBackground />
       <Navbar />
       <BackToTop />
